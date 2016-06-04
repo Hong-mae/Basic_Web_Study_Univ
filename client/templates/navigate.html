@@ -15,9 +15,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
                     <li>
                         <a class="page-scroll" href="{{pathFor 'services'}}">Services</a>
                     </li>
@@ -27,15 +24,15 @@
                     <li>
                         <a class="page-scroll" href="{{pathFor 'press'}}">Press</a>
                     </li>
-                    <li>
-                        <a type="button" class="page-scroll btn btn-sm" data-toggle="modal" data-target="#myModal">Sign Up</a>
-                    </li>
+                    {{> loginButtons}}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
+</template>
 
-
+<template name="_loginButtonsAdditionalLoggedInDropdownActions">
+    <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit profile</button>
 </template>
