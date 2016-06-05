@@ -1,1 +1,1 @@
-import '../imports/api/_story.js';
+import '../imports/api/storys.js';

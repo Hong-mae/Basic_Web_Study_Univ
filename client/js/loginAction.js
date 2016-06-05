@@ -1,9 +1,5 @@
 accountsUIBootstrap3.setLanguage('ko');
-// accountsUIBootstrap3.setCustomSignupOptions = function() {
-//     return {
-//         referrerId: Session.get('referrerId') // Or whatever
-//     }
-// }
+
 Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [{
@@ -41,23 +37,7 @@ Accounts.ui.config({
             checked: 'checked'
         }],
         visible: true
-    }, {
-        fieldName: 'country',
-        fieldLabel: 'Country',
-        inputType: 'select',
-        showFieldLabel: true,
-        empty: 'Please select your country of residence',
-        data: [{
-            id: 1,
-            label: 'United States',
-            value: 'us'
-        }, {
-            id: 2,
-            label: 'Spain',
-            value: 'es',
-        }],
-        visible: true
-    }, {
+    },  {
         fieldName: 'terms',
         fieldLabel: 'I accept the terms and conditions',
         inputType: 'checkbox',
