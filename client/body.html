@@ -1,11 +1,13 @@
-<template name="layout" id="page-top" class="index">
+<template name="layout">
     <!-- Navigation -->
     {{>navigate}}
     <!-- Header -->
 
-    {{> yield}}
+    <header>
+        {{> yield}}
+    </header>
 
-    {{>footer}}
+    <!--{{>footer}}-->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
