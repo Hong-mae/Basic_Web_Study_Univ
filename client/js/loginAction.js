@@ -1,9 +1,9 @@
 accountsUIBootstrap3.setLanguage('ko');
-accountsUIBootstrap3.setCustomSignupOptions = function() {
-    return {
-        referrerId: Session.get('referrerId') // Or whatever
-    }
-}
+// accountsUIBootstrap3.setCustomSignupOptions = function() {
+//     return {
+//         referrerId: Session.get('referrerId') // Or whatever
+//     }
+// }
 Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [{
