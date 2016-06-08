@@ -1,0 +1,42 @@
+<template name="story">
+    <header>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 id="margin" >MOCI's Story</h1>
+                <form id="search" class="form-inline" >
+                    <input type="text" name="hashtag" class="form-control" size="50" placeholder="찾으시는 #태그를 입력하세요.">
+                    <button type="submit" class="btn btn-primary" id="story"><span class="glyphicon glyphicon-search"></span> Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        {{#if currentUser}}
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                            <h4 class="panel-title">
+                                <a href="#demo" data-toggle="collapse">이야기를 쓰고 사진을 선택해주세요</a>
+                            </h4>
+                    </div>
+                    <div id="demo" class="panel-collapse collapse">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>이야기</h5>
+                                <form>
+                                    <textarea style="width:100%;height:100;border:1;overflow:visible;text-overflow:ellipsis;" name="storyString" class="pull" cols="40" rows="10"></textarea>
+                                    <input type="submit" class="btn btn-primary btn-block" value="작성하기">
+                                </form>
+                            </div>
+                            <div class="col-sm-6">
+                                <h1>사진 부분</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</template>
