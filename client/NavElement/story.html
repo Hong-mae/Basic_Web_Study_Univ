@@ -23,20 +23,32 @@
                     </div>
                     <div id="demo" class="panel-collapse collapse">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <h5>이야기</h5>
-                                <form>
+                            <form id="addStory">
+                                <div class="col-sm-6">
+                                    <h3>이야기</h3>
                                     <textarea style="width:100%;height:100;border:1;overflow:visible;text-overflow:ellipsis;" name="storyString" class="pull" cols="40" rows="10"></textarea>
                                     <input type="submit" class="btn btn-primary btn-block" value="작성하기">
-                                </form>
-                            </div>
-                            <div class="col-sm-6">
-                                <h1>사진 부분</h1>
-                            </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h3>사진 부분</h3>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         {{/if}}
     </div>
+
+    <div class="container">
+        <ul>
+            {{#each storys}}
+                {{> stories}}
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="stories">
+    <li>{{values}}</li>
 </template>

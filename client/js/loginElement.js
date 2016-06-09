@@ -21,3 +21,4 @@ Accounts.ui.config({
         visible: true,
     }]
 });
+
