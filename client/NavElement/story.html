@@ -30,7 +30,9 @@
                                     <input type="submit" class="btn btn-primary btn-block" value="작성하기">
                                 </div>
                                 <div class="col-sm-6">
-                                    <h3>사진 부분</h3>
+                                    <h3>배경사진</h3>
+                                    {{>random}}
+                                    <button type="button" id="refresh" class="btn btn-primary">새로 고침</button>
                                 </div>
                             </form>
                         </div>
@@ -51,4 +53,8 @@
 
 <template name="stories">
     <li>{{values}}</li>
+</template>
+
+<template name="random">
+    <img src="{{randomImage}}" alt="배경사진" style="max-width: 100%; height: auto;">
 </template>

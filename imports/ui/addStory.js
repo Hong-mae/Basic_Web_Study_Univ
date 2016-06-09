@@ -7,10 +7,19 @@ import { Storys } from '../api/storys.js';
 
 import '../../client/NavElement/story.html';
 
+Session.setDefault('img_src');
+
 Template.story.helpers({
    storys(){
      return Storys.find({});
    },
+});
+
+Template.random.helpers({
+    randomImage: function() {
+        var src =Session.get('img_src');
+        return src;
+    }
 });
 
 Template.story.events({
@@ -29,5 +38,13 @@ Template.story.events({
         });
 
         target.storyString.value = "";
+    },
+    'click #refresh':function(event){
+        Meteor.call("unImage", function(error, results) {
+            var img = results.url;
+            Session.set('img_src', img);
+
+            console.log(img);
+        });
     }
 });
