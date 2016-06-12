@@ -32,7 +32,7 @@
                                 <div class="col-sm-6">
                                     <h3>배경사진</h3>
                                     {{>random}}
-                                    <button type="button" id="refresh" class="btn btn-primary">새로 고침</button>
+                                    <button type="button" id="refresh" class="btn btn-primary btn-block">새로 고침</button>
                                 </div>
                             </form>
                         </div>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="container">
-        <ul>
+        <ul style="list-style: none;">
             {{#each storys}}
                 {{> stories}}
             {{/each}}
@@ -52,9 +52,12 @@
 </template>
 
 <template name="stories">
-    <li>{{values}}</li>
+    <li style="float: left; width:auto; height:auto;"  valign="middle" align="center">
+        <img class="img-rounded" src="{{loadimage}}" alt="배경사진" style="width: 350px; height: 250px;">
+        <span id="text" style="color:#ffffff; font-weight:700; font-size:24px; font-family:맑은 고딕; letter-spacing:-3px; line-height:1.6; background:#df5002; opacity:0.6;">{{values}}</span>
+    </li>
 </template>
 
 <template name="random">
-    <img src="{{randomImage}}" alt="배경사진" style="max-width: 100%; height: auto;">
+    <img id="imgload" class="img-rounded" src="{{randomImage}}" alt="배경사진" style="max-width: 100%; width:600px; height:206px; margin-bottom: 5px;">
 </template>

@@ -9,9 +9,11 @@ import '../../client/NavElement/story.html';
 
 Session.setDefault('img_src');
 
+var count = 0;
+
 Template.story.helpers({
    storys(){
-     return Storys.find({});
+       return Storys.find({});
    },
 });
 
@@ -19,7 +21,8 @@ Template.random.helpers({
     randomImage: function() {
         var src =Session.get('img_src');
         return src;
-    }
+    },
+
 });
 
 Template.story.events({
@@ -36,7 +39,7 @@ Template.story.events({
             values,
             createdAt: new Date(),
             owner: Meteor.userId(),
-            imageURL,
+            url: imageURL,
         });
 
         target.storyString.value = "";
