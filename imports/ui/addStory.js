@@ -28,23 +28,23 @@ Template.story.events({
 
         var target = event.target;
         var values = target.storyString.value;
+        var imageURL = $('#imgload').attr('src');
 
-        var splitedArray = values.split(" ");
-        console.log(splitedArray[0]);
+        
 
         Storys.insert({
             values,
             createdAt: new Date(),
+            owner: Meteor.userId(),
+            imageURL,
         });
 
         target.storyString.value = "";
     },
     'click #refresh':function(event){
         Meteor.call("unImage", function(error, results) {
-            var img = results.url;
-            Session.set('img_src', img);
-
-            console.log(img);
+            Session.set('img_src', results);
+            console.log(results);
         });
     }
 });
