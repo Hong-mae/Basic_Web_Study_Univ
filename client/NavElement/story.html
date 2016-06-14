@@ -31,6 +31,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <h3>배경사진</h3>
+
+                                    <input type="hidden" placeholder="#태그를 입력하세요">
                                     {{>random}}
                                     <button type="button" id="refresh" class="btn btn-primary btn-block">새로 고침</button>
                                 </div>
@@ -42,7 +44,7 @@
         {{/if}}
     </div>
 
-    <div class="container">
+    <div class="container" style="overflow:scroll; height: 500px">
         <ul style="list-style: none;">
             {{#each storys}}
                 {{> stories}}
@@ -52,10 +54,12 @@
 </template>
 
 <template name="stories">
-    <li style="float: left; width:auto; height:auto;"  valign="middle" align="center">
-        <img class="img-rounded" src="{{url}}" alt="배경사진" style="width: 350px; height: 250px;">
-        <span id="text" style="color:#ffffff; font-weight:700; font-size:24px; font-family:맑은 고딕; letter-spacing:-3px; line-height:1.6; background:#df5002; opacity:0.6;">{{values}}</span>
-    </li>
+    <div id="image">
+        <li style="float: left; width:auto; height:auto;"  valign="middle" align="center">
+            <img class="img-rounded" src="{{url}}" alt="배경사진" style="width: 350px; height: 250px;">
+            <p id="text" style="color:#ffffff; font-weight:700; font-size:24px; font-family:맑은 고딕; letter-spacing:-3px; line-height:1.6; background:#df5002; opacity:0.6;">{{values}}</p>
+        </li>
+    </div>
 </template>
 
 <template name="random">

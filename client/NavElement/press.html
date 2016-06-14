@@ -2,8 +2,15 @@
     <header>
         <div class="container">
             <div class="jumbotron text-center">
-                <h1 id="margin">Press</h1>
-                <p>We specialize in blablabla</p>
+                {{#if currentUser}}
+                    <h1 id="margin">My Info</h1>
+                    <p>내가 작성한 카드와 나의 정보</p>
+                {{else}}
+                    <h1 id="margin">WARNING</h1>
+                    <div class="alert alert-danger">
+                        <strong>Warning!</strong> 로그인이 필요합니다.
+                    </div>
+                {{/if}}
             </div>
         </div>
     </header>
