@@ -1,7 +1,7 @@
 /**
  * Created by U202_1 on 2016-06-08.
  */
-import '../NavElement/story.html';
+import '../template/story.html';
 
 import { Storys } from '../../imports/api/storys';
 
