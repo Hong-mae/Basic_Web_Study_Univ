@@ -55,12 +55,12 @@
 <template name="stories">
     <div id="image">
         <li style="float: left; width:auto; height:auto;"  valign="middle" align="center">
-            <img class="img-rounded" src="{{url}}" alt="배경사진" style="width: 350px; height: 250px;">
-            <p id="text" style="color:#ffffff; font-weight:700; font-size:24px; font-family:맑은 고딕; letter-spacing:-3px; line-height:1.6; background:#df5002; opacity:0.6;">{{values}}</p>
+            <img class="img-rounded img-responsive" src="{{url}}" alt="배경사진" style="width: 350px; height: 250px;">
+            <p id="text" style="width:100%;height:100;border:1; margin-bottom: 3px; color:#ffffff; font-weight:700; font-size:24px; font-family:맑은 고딕; letter-spacing:-3px; line-height:1.6; background:#df5002; opacity:0.6;">{{values}}</p>
         </li>
     </div>
 </template>
 
 <template name="random">
-    <img id="imgload" class="img-rounded" src="{{randomImage}}" alt="배경사진" style="max-width: 100%; width:600px; height:235px; margin-bottom: 5px;">
+    <img id="imgload" class="img-rounded img-responsive" src="{{randomImage}}" alt="배경사진" style="max-width: 100%; width:600px; height:235px; margin-bottom: 5px;">
 </template>

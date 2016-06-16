@@ -33,13 +33,6 @@ Template.story.helpers({
             return Storys.find({hash_Tag:{$elemMatch:{tag:check}}}, {sort: {createdAt: -1}}) ;
         }
     },
-    FIRSTNAME(){
-        console.log(Meteor.user());
-        // return Meteor.user().profile;
-    },
-    LASTNAME(){
-        // return Meteor.user().profile.lastname;
-    }
 });
 
 Template.story.events({
@@ -86,6 +79,6 @@ Template.story.events({
             console.log(results);
         });
     },
-    'click #clicked':function(event, template){
-    },
 });
+
+
