@@ -4,7 +4,7 @@
             <div class="jumbotron text-center">
                 <h1 id="margin" >MOCI's Story</h1>
                 <form id="search" class="form-inline" >
-                    <input type="text" name="hashtag" class="form-control" size="50" placeholder="찾으시는 #태그를 입력하세요.">
+                    <input type="text" name="hashtag" class="form-control" size="50" placeholder="찾으시는 #태그를 입력하세요." onfocus="$(this).attr('value', '#');">
                     <button type="submit" class="btn btn-primary" id="story"><span class="glyphicon glyphicon-search"></span> Search</button>
                 </form>
             </div>
@@ -26,13 +26,12 @@
                             <form id="addStory">
                                 <div class="col-sm-6">
                                     <h3>이야기</h3>
+                                    <input id="hash_Tag" type="text" placeholder="#태그를 입력하세요" style="width:100%;height:100;border:1; margin-bottom: 3px;" onfocus="$(this).attr('value', '#');">
                                     <textarea style="width:100%;height:100;border:1;overflow:visible;text-overflow:ellipsis;" name="storyString" class="pull" cols="40" rows="10"></textarea>
                                     <input type="submit" class="btn btn-primary btn-block" value="작성하기">
                                 </div>
                                 <div class="col-sm-6">
                                     <h3>배경사진</h3>
-
-                                    <input type="hidden" placeholder="#태그를 입력하세요">
                                     {{>random}}
                                     <button type="button" id="refresh" class="btn btn-primary btn-block">새로 고침</button>
                                 </div>
@@ -63,5 +62,5 @@
 </template>
 
 <template name="random">
-    <img id="imgload" class="img-rounded" src="{{randomImage}}" alt="배경사진" style="max-width: 100%; width:600px; height:206px; margin-bottom: 5px;">
+    <img id="imgload" class="img-rounded" src="{{randomImage}}" alt="배경사진" style="max-width: 100%; width:600px; height:235px; margin-bottom: 5px;">
 </template>
