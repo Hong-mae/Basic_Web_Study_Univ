@@ -30,10 +30,16 @@ Template.story.helpers({
         if(check === '') {
             return Storys.find({},{sort: {createdAt: -1}});
         }else{
-            console.log(check);
             return Storys.find({hash_Tag:{$elemMatch:{tag:check}}}, {sort: {createdAt: -1}}) ;
         }
     },
+    FIRSTNAME(){
+        console.log(Meteor.user());
+        // return Meteor.user().profile;
+    },
+    LASTNAME(){
+        // return Meteor.user().profile.lastname;
+    }
 });
 
 Template.story.events({
@@ -43,9 +49,9 @@ Template.story.events({
         var target = event.target;
         var values = target.hashtag.value;
 
-        console.log(values);
-
         Session.set('hash', values);
+
+        target.hashtag.value = "";
     },
     'submit #addStory': function(event){
         event.preventDefault();
@@ -65,17 +71,10 @@ Template.story.events({
             }
         }
 
-        Storys.insert({
-            values,
-            createdAt: new Date(),
-            owner: Meteor.userId(),
-            url: imageURL,
-            hash_Tag: tags,
-        });
+        Meteor.call('storys.insert', values, imageURL, tags);
 
         Meteor.call("unImage", function(error, results) {
             Session.set('img_src', results);
-            console.log(results);
         });
 
         target.storyString.value = "";
