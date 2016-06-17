@@ -5,9 +5,15 @@ import '../template/story.html';
 
 import { Storys } from '../../imports/api/storys';
 import { Tracker } from 'meteor/tracker';
+import { ReactiveDict } from 'meteor/reactive-dict';
 
 Session.setDefault('img_src');
 Session.setDefault('hash','');
+
+Template.story.onCreated(function storyOnCreated() {
+    this.state = new ReactiveDict();
+    Meteor.subscribe('storys');
+});
 
 Tracker.autorun(function(){
     Meteor.call("unImage", function(error, results) {

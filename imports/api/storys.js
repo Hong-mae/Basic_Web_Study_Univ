@@ -7,6 +7,13 @@ import { check } from 'meteor/check'
 
 export const Storys = new Mongo.Collection('storys');
 
+
+if(Meteor.isServer){
+    Meteor.publish('storys', function storysPublication(){
+       return Storys.find();
+    });
+}
+
 Meteor.methods({
     'storys.insert'(values, imageURL, tags) {
         Storys.insert({

@@ -6,6 +6,8 @@ import { Storys } from '../../imports/api/storys';
 import '../template/myinfo.html'
 
 
+
+
 Template.press.helpers({
     Mystorys(){
         return Storys.find({owner:Meteor.userId()},{sort: {createdAt: -1}});
