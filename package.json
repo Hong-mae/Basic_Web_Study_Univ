@@ -2,7 +2,7 @@
   "name": "MOCI",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "meteor run",
     "test": "grunt jasmine"
   },
   "dependencies": {
